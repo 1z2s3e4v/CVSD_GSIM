@@ -14,8 +14,7 @@ set default_schematic_options {-size infinite}
 
 
 # Import Design
-#set DESIGN "GSIM"
-set DESIGN "run_gsim"
+set DESIGN "GSIM"
 
 set hdlin_translate_off_skip_text "TRUE"
 set edifout_netlist_only "TRUE"
