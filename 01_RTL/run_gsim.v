@@ -99,7 +99,7 @@ always@(*) begin
 		B_next[i]	= B[i];
 		//X_next[i]	= X[i];
 	end
-	// Set A, B and X0 when i_module_en 0->1
+	// Set A and B when i_module_en 0->1
 	if(cur_state == S_WAIT && i_module_en) begin
 		for(i=0;i<=15;i=i+1) begin
 			for(j=0;j<=15;j=j+1) begin
@@ -120,6 +120,7 @@ always@(*) begin
 		newX_next[i]	= newX[i];
 		X_next[i]		= X[i];
 	end
+	// set X0 when i_module_en 0->1
 	if(cur_state == S_WAIT && i_module_en) begin
 		for(i=0;i<=15;i=i+1) begin
 			X_next[i]   = {{16{i_b[i*16+15]}},i_b[i*16+15 -:16]} * {{16{i_a[i*256+i*16+15]}},i_a[i*256+i*16+15 -:16]};
