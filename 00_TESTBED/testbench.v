@@ -22,6 +22,18 @@
     `define INFILE "../00_TESTBED/PATTERN/indata4.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden4.dat"
     `define MATRIXNUM 3
+`elsif tb5
+    `define INFILE "../00_TESTBED/PATTERN/indata5.dat"
+    `define GOLDEN "../00_TESTBED/PATTERN/golden5.dat"
+    `define MATRIXNUM 1
+`elsif tb6
+    `define INFILE "../00_TESTBED/PATTERN/indata6.dat"
+    `define GOLDEN "../00_TESTBED/PATTERN/golden6.dat"
+    `define MATRIXNUM 1
+`elsif tb7
+    `define INFILE "../00_TESTBED/PATTERN/indata7.dat"
+    `define GOLDEN "../00_TESTBED/PATTERN/golden7.dat"
+    `define MATRIXNUM 1
 `else
     `define INFILE "../00_TESTBED/PATTERN/indata0.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden0.dat"
@@ -234,7 +246,8 @@ end
 // i_mem_rrdy simulation (modify here)
 always @(posedge clk or posedge reset)  begin
     if(reset)    rrdy_r <= 1;
-     else rrdy_r <= 1;
+//     else rrdy_r <= 1;
+	else rrdy_r	<= $random % 2;
 end
 
 
